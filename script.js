@@ -1,4 +1,33 @@
 
+// prompt - length of password
+var passwordLength = prompt("What length would you like your password?  Choose a number between 8 and 128")
+console.log(passwordLength)
+
+  if (passwordLength <8) {
+    alert("Password must be at least 8 characters.");
+  } 
+  else if (passwordLength >128) {
+    alert("Password must be at least 8 characters.");
+  }
+
+  // define variables
+var upperCase = confirm("Would you like to use uppercase letters?")
+var lowerCase = confirm("Would you like to use lowercase letters?")
+var useNumber = confirm("Would you like to use numbers")
+var useSpecial = confirm("Would you like to use special characters?")
+
+// input validated
+
+// if (upperCase || lowerCase || useNumber || useSpecial) {
+//   alert("You selected a password with: " + )
+// }
+
+// if no variables selected
+if (!upperCase && !lowerCase && !useNumber && !useSpecial) {
+  alert("You much choose a character type to continue!")
+}
+
+
 
 // generate random characters
 function getRandomUpper() {
@@ -18,10 +47,12 @@ console.log(getRandomNumber());
 
 
 function getRandomSymbol() {
-  var symbols = "/^[a-zA-Z0-9!@#$%^&*]{6,16}$/";
+  var symbols = "!@#$%^&*()_+~`|}{[]\:;?><,./-='";
   return symbols[Math.floor(Math.random() * symbols.length)]
 }
-console.log(getRandomSymbol(0))
+console.log(getRandomSymbol())
+
+
 
 
 
