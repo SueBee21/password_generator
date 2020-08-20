@@ -3,18 +3,64 @@
 var chooseLength = prompt("What length would you like your password?  Choose a number between 8 and 128")
 console.log(chooseLength)
 
-  if (chooseLength <8) {
-    alert("Password must be at least 8 characters.");
-  } 
-  else if (chooseLength >128) {
-    alert("Password must be at least 8 characters.");
+if (chooseLength >= 8 && chooseLength <= 128) {
+
+  var upperCase = confirm("Click OK if you would you like to use uppercase letters?")
+  var lowerCase = confirm("Click OK if you would you like to use lowercase letters?")
+  var useNumberCase = confirm("Click OK if you would you like to use numbers")
+  var useSpecialCase = confirm("Click OK if you would you like to use special characters?")
+
+  var useUpper = ""
+  if (upperCase) {
+    useUpper = getRandomUpper()
+    console.log(useUpper)
   }
 
+
+  var useLower = ""
+  if (lowerCase) {
+    useLower = getRandomLower()
+    console.log(useLower)
+  }
+
+  var useNumber = ""
+  if (useNumberCase) {
+    useNumberCase = getRandomNumber()
+    console.log(useNumber)
+  }
+
+
+  var useSymbol = ""
+  if (useSpecialCase) {
+    useSpecialCase = getRandomSymbol()
+    console.log(useSymbol)
+  }
+
+
+
+
+  if (upperCase || lowerCase || useNumberCase || useSpecialCase) {
+
+    var passwordChar = writepassword(useUpper, useLower, useNumber, useSymbol)
+
+      var passwordText = document.querySelector("#password");
+
+  passwordText.value = passwordChar;
+
+  }
+
+  else {
+    alert("You much choose a character type to continue!")
+  }
+
+}
+else {
+  // stop script here and refresh?
+  alert("password must be at least 8 characters and less than 129 characters.");
   // define variables
-var upperCase = confirm("Would you like to use uppercase letters?")
-var lowerCase = confirm("Would you like to use lowercase letters?")
-var useNumber = confirm("Would you like to use numbers")
-var useSpecial = confirm("Would you like to use special characters?")
+
+}
+
 
 
 // input validated
@@ -24,56 +70,76 @@ var useSpecial = confirm("Would you like to use special characters?")
 // }
 
 // if no variables selected
-if (!upperCase && !lowerCase && !useNumber && !useSpecial) {
-  alert("You much choose a character type to continue!")
-}
 
 
 
 // generate random characters
 // uppercase
 function getRandomUpper() {
-return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
-var useUpper = getRandomUpper()
-console.log(useUpper)
+
 
 // lowercase
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
-var useLower = getRandomLower()
-console.log(useLower)
+
 
 // random number
 function getRandomNumber() {
   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-  }
-  var useNumber = getRandomNumber()
-  console.log(useNumber)
+}
+
 
 // random symbol
 function getRandomSymbol() {
   var symbols = "!@#$%^&*()_+~`|}{[]\:;?><,./-='";
   return symbols[Math.floor(Math.random() * symbols.length)]
 }
-var useSymbol = getRandomSymbol()
-console.log(useSymbol)
+
 
 
 // create password
-function writePassword () {
+function writepassword(useUpper, useLower, useNumber, useSymbol) {
 
-  var password = [useUpper, useLower, useNumber, useSymbol] 
-  return password[Math.floor(Math.random() * password.length)] 
-  
+
+
+  var password = useUpper + useLower + useNumber + useSymbol
+
+  var remainingpasswordLength = chooseLength - password.length
+  for (let index = 0; index < remainingpasswordLength; index++) {
+
+
+    if (upperCase) {
+      password = password + getRandomUpper()
+
+    }
+
+
+
+    if (lowerCase) {
+      password = password + getRandomLower()
+
+    }
+
+
+    if (useNumberCase) {
+      password = password + getRandomNumber()
+
+    }
+
+
+
+    if (useSpecialCase) {
+      password = password + getRandomSymbol()
+
+    }
+
+  }
+   return password
+
 }
-var passwordChar = writePassword()
-
-console.log(passwordChar)
-
-var password = passwordChar.repeat(chooseLength)
-console.log(password)
 
 
 
@@ -83,8 +149,8 @@ console.log(password)
 
 
 // // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
+// function writepassword() {
+//   var password = generatepassword();
 //   var passwordText = document.querySelector("#password");
 
 //   passwordText.value = password;
@@ -93,6 +159,6 @@ console.log(password)
 // }
 
 // // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writepassword);
 
 
