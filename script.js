@@ -16,6 +16,8 @@ var lowerCase = confirm("Would you like to use lowercase letters?")
 var useNumber = confirm("Would you like to use numbers")
 var useSpecial = confirm("Would you like to use special characters?")
 
+
+
 // input validated
 
 // if (upperCase || lowerCase || useNumber || useSpecial) {
@@ -30,27 +32,34 @@ if (!upperCase && !lowerCase && !useNumber && !useSpecial) {
 
 
 // generate random characters
+// uppercase
 function getRandomUpper() {
 return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
-console.log(getRandomUpper());
+var useUpper = getRandomUpper()
+console.log(useUpper)
 
+// lowercase
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
-console.log(getRandomLower());
+var useLower = getRandomLower()
+console.log(useLower)
 
+// random number
 function getRandomNumber() {
   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
   }
-console.log(getRandomNumber());
+  var useNumber = getRandomNumber()
+  console.log(useNumber)
 
-
+// random symbol
 function getRandomSymbol() {
   var symbols = "!@#$%^&*()_+~`|}{[]\:;?><,./-='";
   return symbols[Math.floor(Math.random() * symbols.length)]
 }
-console.log(getRandomSymbol())
+var useSymbol = getRandomSymbol()
+console.log(useSymbol)
 
 
 
