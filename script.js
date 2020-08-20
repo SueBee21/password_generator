@@ -65,11 +65,16 @@ console.log(useSymbol)
 function writePassword () {
 
   var password = [useUpper, useLower, useNumber, useSymbol] 
-  return password[Math.floor(Math.random() * password.length)]  
+  return password[Math.floor(Math.random() * password.length)] 
+  
 }
-var passwordText = writePassword()
+var passwordChar = writePassword()
 
-console.log(passwordText)
+console.log(passwordChar)
+
+var password = passwordChar.repeat(chooseLength)
+console.log(password)
+
 
 
 // // Assignment Code
