@@ -12,4 +12,6 @@ ass#  Password Generator
 * Bootstrap components were utilized in this project.  www.getbootstrap.com  
 * Assistance was received from W3Schools website www.w3schools.com   
 
+![image](https://user-images.githubusercontent.com/68358265/90967513-300fb680-e4ae-11ea-89c3-7baf21cd1ee8.png)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./assets.license.txt)
