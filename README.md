@@ -1,4 +1,4 @@
-#  Password Generator
+ass#  Password Generator
 
 ## Project Overview:  User is requesting development of a random password generator. As an employee with sensitive data, user needs to be able to generate avpassword that meet certin criteria and provides greater security.
 
@@ -12,4 +12,4 @@
 * Bootstrap components were utilized in this project.  www.getbootstrap.com  
 * Assistance was received from W3Schools website www.w3schools.com   
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./license.txt)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./assets.license.txt)
