@@ -4,9 +4,8 @@ var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", generatePassword);
 
 function generatePassword() {
-  // prompt - length of password
+// set length of password
   var chooseLength = prompt("What length would you like your password?  Choose a number between 8 and 128");
-  console.log(chooseLength)
 
   // validate length
   if (chooseLength >= 8 && chooseLength <= 128) {
@@ -16,18 +15,17 @@ function generatePassword() {
     var useNumber = confirm("Click OK if you would you like to use numbers");
     var useSpecial = confirm("Click OK if you would you like to use special characters?");
 
-
     // write password
     if (useUpper || useLower || useNumber || useSpecial) {
 
       var passwordChar = writepassword(useUpper, useLower, useNumber, useSpecial);
       console.log(passwordChar)
+    
       var passwordDeliverable = passwordChar.substring(0, (chooseLength+1));
 
       var passwordText = document.querySelector("#password");
 
       passwordText.value = passwordDeliverable;
-
     }
 
     // if no characters selected
@@ -35,13 +33,11 @@ function generatePassword() {
       alert("You much choose at least one character type to continue!");
     }
 
-    // if length does not meet criteria
   }
+  // if length does not meet criteria
   else {
     alert("You much choose a password length at least 8 characters and no more than 128 characters.");
   }
-
-
 
   // generate random characters
   // uppercase
@@ -72,34 +68,32 @@ function generatePassword() {
     var password = " ";
 
 
- 
-      for (let index = 0; password.length <= chooseLength; index++) {
+    for (let index = 0; password.length <= chooseLength; index++) {
 
-     
-        if (useUpper) {
-          password = password + getRandomUpper();
-        }
 
-        if (useLower) {
-          password = password + getRandomLower();
-        }
-
-        if (useNumber) {
-          password = password + getRandomNumber();
-        }
-console.log(password)
-        if (useSpecial) {
-          password = password + getRandomSymbol();
-        }
-  
-    
+      if (useUpper) {
+        password = password + getRandomUpper();
       }
-      return password
 
+      if (useLower) {
+        password = password + getRandomLower();
+      }
 
+      if (useNumber) {
+        password = password + getRandomNumber();
+      }
     
+      if (useSpecial) {
+        password = password + getRandomSymbol();
+      }
+
+
     }
-  
+    return password
+
+
+  }
+
 }
 
 
