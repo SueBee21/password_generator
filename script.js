@@ -19,13 +19,8 @@ function generatePassword() {
     if (useUpper || useLower || useNumber || useSpecial) {
 
       var passwordChar = writepassword(useUpper, useLower, useNumber, useSpecial);
-      console.log(passwordChar)
-
-      var passwordDeliverable = passwordChar.substring(0, (chooseLength + 1));
-
       var passwordText = document.querySelector("#password");
-
-      passwordText.value = passwordDeliverable;
+      passwordText.value = passwordChar;
     }
 
     // if no characters selected
