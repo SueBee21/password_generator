@@ -65,32 +65,41 @@ function generatePassword() {
   // create random password
   function writepassword(useUpper, useLower, useNumber, useSpecial) {
 
-    var password = " ";
+    var password = "";
 
-
-    for (let index = 0; password.length <= chooseLength; index++) {
+    for (let index = 0; password.length < chooseLength; index++) {
 
 
       if (useUpper) {
         password = password + getRandomUpper();
+        if (password.length == chooseLength) {
+          break;}  
       }
-
+console.log(password)
+ 
       if (useLower) {
         password = password + getRandomLower();
+        if (password.length == chooseLength) {
+          break;}
       }
+      console.log(password)
 
       if (useNumber) {
         password = password + getRandomNumber();
+        if (password.length == chooseLength) {
+          break;}
       }
-    
+      console.log(password)
+
       if (useSpecial) {
         password = password + getRandomSymbol();
+        if (password.length == chooseLength) {
+          break;}
       }
-
+      console.log(password)
 
     }
     return password
-
 
   }
 
