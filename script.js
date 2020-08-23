@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", generatePassword);
 
 function generatePassword() {
-// set length of password
+  // set length of password
   var chooseLength = prompt("What length would you like your password?  Choose a number between 8 and 128");
 
   // validate length
@@ -20,8 +20,8 @@ function generatePassword() {
 
       var passwordChar = writepassword(useUpper, useLower, useNumber, useSpecial);
       console.log(passwordChar)
-    
-      var passwordDeliverable = passwordChar.substring(0, (chooseLength+1));
+
+      var passwordDeliverable = passwordChar.substring(0, (chooseLength + 1));
 
       var passwordText = document.querySelector("#password");
 
@@ -61,7 +61,6 @@ function generatePassword() {
     return symbols[Math.floor(Math.random() * symbols.length)];
   }
 
-
   // create random password
   function writepassword(useUpper, useLower, useNumber, useSpecial) {
 
@@ -69,40 +68,37 @@ function generatePassword() {
 
     for (let index = 0; password.length < chooseLength; index++) {
 
-
       if (useUpper) {
         password = password + getRandomUpper();
         if (password.length == chooseLength) {
-          break;}  
+          break;
+        }
       }
-console.log(password)
- 
+
       if (useLower) {
         password = password + getRandomLower();
         if (password.length == chooseLength) {
-          break;}
+          break;
+        }
       }
-      console.log(password)
 
       if (useNumber) {
         password = password + getRandomNumber();
         if (password.length == chooseLength) {
-          break;}
+          break;
+        }
       }
-      console.log(password)
 
       if (useSpecial) {
         password = password + getRandomSymbol();
         if (password.length == chooseLength) {
-          break;}
+          break;
+        }
       }
-      console.log(password)
 
     }
     return password
-
   }
-
 }
 
 
