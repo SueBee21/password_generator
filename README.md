@@ -1,4 +1,4 @@
-ass#  Password Generator
+#  Password Generator
 
 ## Project Overview:  User is requesting development of a random password generator. As an employee with sensitive data, user needs to be able to generate avpassword that meet certin criteria and provides greater security.
 
@@ -7,6 +7,11 @@ ass#  Password Generator
 * Password generator allows user to select use of upper and lower case letters, numbers, and special characters.  Generator will not continue if none are selected.
 * Password generator function produces random selection of characters based on the selection of the user, and uses these characters to create a password string that meets the user's required password length.
 * The generated password appears in the text box, where the user can copy to clipboard if desired.
+
+## Project Link:
+https://suebee21.github.io/password_generator/
+
+![image](https://user-images.githubusercontent.com/68358265/90967513-300fb680-e4ae-11ea-89c3-7baf21cd1ee8.png)
 
 ## Credits: 
 * Bootstrap components were utilized in this project.  www.getbootstrap.com  
